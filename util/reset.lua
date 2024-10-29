@@ -12,6 +12,12 @@ exports.EngageReset = function()
     -- Target Frame
     TargetFrame:ClearAllPoints()
     TargetFrame:SetPoint("BOTTOMLEFT", UIParent, "BOTTOM", 80, 200)
+    -- Fixes issue where target frame sits in front of VanillaStoryline's conversation box.
+    PlayerFrame:SetFrameStrata("BACKGROUND")
+    TargetFrame:SetFrameStrata("BACKGROUND")
+    if StorylineFrame then
+        StorylineFrame:SetFrameStrata("HIGH")
+    end
 
     -- Force-hide Multi ActionBars
     MainMenuBar:Hide()
