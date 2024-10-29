@@ -1,0 +1,21 @@
+name: Attach Zip to release
+on: 
+    release:
+        types: [published]
+
+jobs:
+    zip-and-attach:
+        name: Zip and Attach
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Build Artifact
+              run: |
+                cd ${{ github.workspace }}
+                zip -r "AxolotlUI-${{ github.ref_name }}" AxolotlUI -x "*/.*" -x "*/*.def.lua" -x "*/*.xsd"
+            - name: Upload Artifact
+              uses: softprops/action-gh-release@v2
+              if: startsWith(github.ref, 'refs/tags/')
+              with:
+                files: AxolotlUI-${{ github.ref_name }}
