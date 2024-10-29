@@ -1,4 +1,9 @@
 # AxolotlUI
+![WoW Client](https://img.shields.io/badge/wow_client-1.12.1_%22vanilla%22-blue)
+[![Release](https://img.shields.io/github/v/release/ChionReverie/AxolotlUI)](https://github.com/ChionReverie/AxolotlUI/tags) 
+[![Prerelease](https://img.shields.io/github/v/release/ChionReverie/AxolotlUI?include_prereleases&label=prerelease)](https://github.com/ChionReverie/AxolotlUI/tags)
+
+
 Axolotl is my custom UI addon for the World of Warcraft Vanilla 1.12 client. It was originally designed for use on the TurtleWoW server, but is intented to function on any vanilla realm.
 
 I created this addon because I've never been happy with other UI mods and their simplified shape language and clashing themes. With Axolotl, I intend to reimagine common addon features under a unified design theme. In the future, I intend to support other addons by replacing their visuals. 
