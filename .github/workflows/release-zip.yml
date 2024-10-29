@@ -5,6 +5,8 @@ on:
 
 jobs:
     zip-and-attach:
+        permissions: 
+            contents: write
         name: Zip and Attach
         runs-on: ubuntu-latest
         env:
