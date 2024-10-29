@@ -1,0 +1,8 @@
+## Interface 11000
+## Title: Axolotl UI
+## Notes: User interface mod
+## Dependencies: 
+## SavedVariablesPerCharacter: 
+AxolotlUI.lua
+util\util.xml
+components\components.xml
