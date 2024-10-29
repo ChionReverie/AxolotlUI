@@ -20,6 +20,7 @@ assignees: ''
 ### Environment
 <!-- 
 WoW client (Vanilla 1.12? TurtleWow 1.17?)
+AxolotlUI version
 What other addons are in use? (Include links if possible)
 For bonus points, try to reproduce the issue with as few addons enabled as possible.
 -->
