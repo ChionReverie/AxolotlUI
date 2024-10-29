@@ -19,6 +19,16 @@ exports.EngageReset = function()
         StorylineFrame:SetFrameStrata("HIGH")
     end
 
+    -- Group loot frames
+    GroupLootFrame1:ClearAllPoints();
+    GroupLootFrame1:SetPoint("Top", Axolotl.ui.InfoBar, "BOTTOM", 0, -10)
+    GroupLootFrame2:ClearAllPoints();
+    GroupLootFrame2:SetPoint("Top", GroupLootFrame1, "BOTTOM", 0, 0)
+    GroupLootFrame3:ClearAllPoints();
+    GroupLootFrame3:SetPoint("Top", GroupLootFrame2, "BOTTOM", 0, 0)
+    GroupLootFrame4:ClearAllPoints();
+    GroupLootFrame4:SetPoint("Top", GroupLootFrame3, "BOTTOM", 0, 0)
+
     -- Force-hide Multi ActionBars
     MainMenuBar:Hide()
     MultiBarBottomLeft:Hide()
