@@ -12,7 +12,6 @@ jobs:
               uses: actions/checkout@v4
             - name: Build Artifact
               run: |
-                cd ${{ github.workspace }}
                 zip -r "AxolotlUI-${{ github.ref_name }}" AxolotlUI -x "*/.*" -x "*/*.def.lua" -x "*/*.xsd"
             - name: Upload Artifact
               uses: softprops/action-gh-release@v2
