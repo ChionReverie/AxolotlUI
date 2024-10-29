@@ -1,26 +1,26 @@
 name: Attach Zip to release
 on: 
-    release:
-        types: [published]
+  release:
+    types: [published]
 
 jobs:
-    zip-and-attach:
-        permissions: 
-            contents: write
-        name: Zip and Attach
-        runs-on: ubuntu-latest
-        env:
-            MY_ARTIFACT: AxolotlUI-${{ github.ref_name }}.zip
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v4
-            - name: Build Artifact
-              run: |
-                cd ../
-                rm -rf "${{ env.MY_ARTIFACT }}"
-                zip -r "${{ env.MY_ARTIFACT }}" AxolotlUI -x "*/.*" -x "*/*.def.lua" -x "*/*.xsd"
-            - name: Upload Artifact
-              uses: softprops/action-gh-release@v2
-              if: startsWith(github.ref, 'refs/tags/')
-              with:
-                files: ../${{ env.MY_ARTIFACT }}
+  zip-and-attach:
+    permissions: 
+        contents: write
+    name: Zip and Attach
+    runs-on: ubuntu-latest
+    env:
+      MY_ARTIFACT: AxolotlUI-${{ github.ref_name }}.zip
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build Artifact
+        run: |
+          cd ../
+          rm -rf "${{ env.MY_ARTIFACT }}"
+          zip -r "${{ env.MY_ARTIFACT }}" AxolotlUI -x "*/.*" -x "*/*.def.lua" -x "*/*.xsd"
+      - name: Upload Artifact
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: ../${{ env.MY_ARTIFACT }}
