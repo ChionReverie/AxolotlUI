@@ -85,10 +85,6 @@ exports.Create = function()
     petBar:SetPoint("BOTTOMLEFT", bar2, "TOPLEFT", 0, 50)
     petBar:SetHeight(40)
 
-    -- Backgrounds
-    local backdropColor = { r = 0.35, g = 0.35, b = 0.35 }
-    local borderColor = { r = 0.5, g = 0.5, b = 0.5 }
-
     local background1 = CreateFrame("Frame", nil, container)
     Axolotl.ui.ActionBackground1 = background1;
     background1:SetFrameStrata("BACKGROUND")
@@ -103,8 +99,11 @@ exports.Create = function()
         edgeSize = 16,
         insets = { left = 6, right = 6, top = 6, bottom = 6 }
     })
-    background1:SetBackdropColor(backdropColor.r, backdropColor.g, backdropColor.b)
-    background1:SetBackdropBorderColor(borderColor.r, borderColor.g, borderColor.b)
+
+    local backdropColor = Axolotl.config.color.DefaultBackdrop
+    local borderColor = Axolotl.config.color.DefaultBorder
+    background1:SetBackdropColor(backdropColor:ArgsRGB())
+    background1:SetBackdropBorderColor(borderColor:ArgsRGB())
 
     local background2 = CreateFrame("Frame", nil, container)
     Axolotl.ui.ActionBackground2 = background2;
@@ -123,8 +122,8 @@ exports.Create = function()
         edgeSize = 16,
         insets = { left = 6, right = 6, top = 6, bottom = 6 }
     })
-    background2:SetBackdropColor(backdropColor.r, backdropColor.g, backdropColor.b)
-    background2:SetBackdropBorderColor(borderColor.r, borderColor.g, borderColor.b)
+    background2:SetBackdropColor(backdropColor:ArgsRGB())
+    background2:SetBackdropBorderColor(borderColor:ArgsRGB())
 end
 
 _.old_GetPagedId = ActionButton_GetPagedID

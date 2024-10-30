@@ -4,8 +4,6 @@ Axolotl.util.reset = {}
 local exports = Axolotl.util.reset
 
 exports.EngageReset = function()
-    -- Square Minimap
-    Minimap:SetMaskTexture(Axolotl.Media("img:MapMask"))
     -- Lower main unit frames
     PlayerFrame:ClearAllPoints()
     PlayerFrame:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOM", -80, 200)
@@ -35,4 +33,11 @@ exports.EngageReset = function()
     MultiBarBottomRight:Hide()
     -- MultiBarLeft:Hide()
     -- MultiBarRight:Hide()
+
+    MultiBarRight:SetPoint('RIGHT', UIParent, "RIGHT", -8, 0)
+    MultiBarRight:SetPoint('BOTTOM', Axolotl.ui.MinimapParent, "TOP", 0, 30)
+
+    MinimapCluster:ClearAllPoints()
+    MinimapCluster:SetPoint("TOP", Axolotl.ui.InfoBar, "TOP", 0, -20)
+    MinimapCluster:SetPoint("RIGHT", MultiBarLeft, 'LEFT', -10)
 end

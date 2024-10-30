@@ -11,6 +11,8 @@ Axolotl.util = {}
 --Main container namespace for UI elements.
 --Elements in here are inserted from other files.
 Axolotl.ui = {}
+---@class Axolotl.config
+Axolotl.config = {}
 
 Axolotl.Path = "Interface\\Addons\\AxolotlUI"
 
@@ -48,6 +50,7 @@ Axolotl.Start = function()
     Axolotl.components.ribbonmenu.Create()
     Axolotl.components.actionbar.Create()
     Axolotl.components.xpbar.Create()
+    Axolotl.components.minimap.Create()
 end
 
 Axolotl.ToggleAddonsFrame = function()

@@ -47,6 +47,19 @@ exports.Create = function()
     restedText:SetPoint("LEFT", mainFrame, "CENTER", 200, 0)
     Axolotl.ui.InfoBar_Rested = restedText
 
+    ---@type FontString
+
+    local mailText = mainFrame:CreateFontString("Axolotl_Infobar_Mail")
+    Axolotl.ui.InfoBar_Mail = mailText
+    mailText:SetFont(GameFontNormal:GetFont())
+    local color_mailcheck = Axolotl.config.color.MailIndicator.chatColor
+    mailText:SetText(color_mailcheck .. "You have mail!")
+    mailText:SetPoint("RIGHT", mainFrame, "CENTER", -200, 0)
+
+    local mailListener = CreateFrame("Frame", nil, UIParent)
+    mailListener:RegisterEvent("UPDATE_PENDING_MAIL")
+    mailListener:SetScript("OnEvent", _.Mail_OnEvent)
+
     mainFrame:SetScript("OnUpdate", _.MainFrame_OnUpdate)
     mainFrame:SetScript("OnEvent", _.MainFrame_OnEvent)
 
@@ -72,6 +85,14 @@ end
 
 _.MainFrame_OnEvent = function()
     Axolotl.components.infobar.UpdateRestedText()
+end
+
+_.Mail_OnEvent = function()
+    if HasNewMail() then
+        Axolotl.ui.InfoBar_Mail:Show()
+    else
+        Axolotl.ui.InfoBar_Mail:Hide()
+    end
 end
 
 _.CurrentTimeString = function()
@@ -125,9 +146,9 @@ _.CurrentRestedString = function()
     local xp_max = UnitXPMax("player")
     local rested = GetXPExhaustion()
 
-    local color_rested = "|cff83c2e5"
-    local color_exhausted = "|cffcb83e5"
-    local color_maxrested = "|cffe5d283"
+    local color_rested = Axolotl.config.color.RestedIndicator_Rested.chatColor
+    local color_exhausted = Axolotl.config.color.RestedIndicator_Exhausted.chatColor
+    local color_maxrested = Axolotl.config.color.RestedIndicator_MaxRested.chatColor
 
     if not rested or rested == -1 then
         return color_exhausted .. "Not Rested"
