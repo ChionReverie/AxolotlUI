@@ -52,7 +52,7 @@ exports.Create = function()
     local mailText = mainFrame:CreateFontString("Axolotl_Infobar_Mail")
     Axolotl.ui.InfoBar_Mail = mailText
     mailText:SetFont(GameFontNormal:GetFont())
-    local color_mailcheck = Axolotl.config.color.MailIndicator.chatColor
+    local color_mailcheck = Axolotl.config.style.MailIndicator.chatColor
     mailText:SetText(color_mailcheck .. "You have mail!")
     mailText:SetPoint("RIGHT", mainFrame, "CENTER", -200, 0)
 
@@ -146,9 +146,9 @@ _.CurrentRestedString = function()
     local xp_max = UnitXPMax("player")
     local rested = GetXPExhaustion()
 
-    local color_rested = Axolotl.config.color.RestedIndicator_Rested.chatColor
-    local color_exhausted = Axolotl.config.color.RestedIndicator_Exhausted.chatColor
-    local color_maxrested = Axolotl.config.color.RestedIndicator_MaxRested.chatColor
+    local color_rested = Axolotl.config.style.RestedIndicator_Rested.chatColor
+    local color_exhausted = Axolotl.config.style.RestedIndicator_Exhausted.chatColor
+    local color_maxrested = Axolotl.config.style.RestedIndicator_MaxRested.chatColor
 
     if not rested or rested == -1 then
         return color_exhausted .. "Not Rested"

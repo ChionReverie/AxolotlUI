@@ -92,16 +92,10 @@ exports.Create = function()
     background1:SetHeight(52 + 52 + 32)
     background1:SetWidth(52 * 12 + 24)
 
-    background1:SetBackdrop({
-        bgFile = Axolotl.Media("img:ActionBarBackground"),
-        edgeFile = Axolotl.Media("img:ActionBarFrame_Edge"),
-        tileEdge = true,
-        edgeSize = 16,
-        insets = { left = 6, right = 6, top = 6, bottom = 6 }
-    })
+    background1:SetBackdrop(Axolotl.config.style.ActionBarBackdrop)
 
-    local backdropColor = Axolotl.config.color.DefaultBackdrop
-    local borderColor = Axolotl.config.color.DefaultBorder
+    local backdropColor = Axolotl.config.style.DefaultBackdrop
+    local borderColor = Axolotl.config.style.DefaultBorder
     background1:SetBackdropColor(backdropColor:ArgsRGB())
     background1:SetBackdropBorderColor(borderColor:ArgsRGB())
 
@@ -115,13 +109,7 @@ exports.Create = function()
     -- background2:SetHeight(71)
     -- background2:SetWidth(500)
 
-    background2:SetBackdrop({
-        bgFile = Axolotl.Media("img:ActionBarBackground"),
-        edgeFile = Axolotl.Media("img:ActionBarFrame_Edge2"),
-        tileEdge = true,
-        edgeSize = 16,
-        insets = { left = 6, right = 6, top = 6, bottom = 6 }
-    })
+    background2:SetBackdrop(Axolotl.config.style.ActionBarBackdrop_Top)
     background2:SetBackdropColor(backdropColor:ArgsRGB())
     background2:SetBackdropBorderColor(borderColor:ArgsRGB())
 end

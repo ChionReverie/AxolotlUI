@@ -21,8 +21,8 @@ exports.Create = function()
     xpBar:SetBackdrop({
         bgFile = Axolotl.Media("img:XpBar_BG"),
     })
-    xpBar:SetStatusBarColor(Axolotl.config.color.XPBarRested:ArgsRGB())
-    xpBar:SetBackdropColor(Axolotl.config.color.XPBarEmpty:ArgsRGB())
+    xpBar:SetStatusBarColor(Axolotl.config.style.XPBarRested:ArgsRGB())
+    xpBar:SetBackdropColor(Axolotl.config.style.XPBarEmpty:ArgsRGB())
 
     local border = CreateFrame("Frame", nil, xpBar);
     border:SetBackdrop({
@@ -30,7 +30,7 @@ exports.Create = function()
         edgeSize = 1
     })
     border:SetAllPoints(xpBar)
-    border:SetBackdropBorderColor(Axolotl.config.color.XPBarBorder:ArgsRGB())
+    border:SetBackdropBorderColor(Axolotl.config.style.XPBarBorder:ArgsRGB())
 
     -- TODO: Pet XP Bar?
     -- xpBar:RegisterEvent("UNIT_PET")

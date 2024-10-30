@@ -2,6 +2,7 @@
 Axolotl.util.reset = {}
 ---@class Axolotl.util.reset
 local exports = Axolotl.util.reset
+local _ = {}
 
 exports.EngageReset = function()
     -- Lower main unit frames
@@ -40,4 +41,62 @@ exports.EngageReset = function()
     MinimapCluster:ClearAllPoints()
     MinimapCluster:SetPoint("TOP", Axolotl.ui.InfoBar, "TOP", 0, -20)
     MinimapCluster:SetPoint("RIGHT", MultiBarLeft, 'LEFT', -10)
+
+    Axolotl.util.reset.ResetBuffDisplay()
+
+    -- Replace tooltip anchor
+    if _.defaultTooltipAnchorFn == nil then
+        _.defaultTooltipAnchorFn = GameTooltip_SetDefaultAnchor
+        GameTooltip_SetDefaultAnchor = exports.SetDefaultTooltipAnchor
+    end
+end
+
+function exports.ResetBuffDisplay()
+    --- Columns
+    for i = 0, 23, 1 do
+        button:ClearAllPoints()
+        ---@type Button
+        local button = getglobal("BuffButton" .. i)
+        ---@type Button
+        local previous = getglobal("BuffButton" .. (i - 1))
+        if previous then
+            button:SetPoint("RIGHT", previous, "LEFT", 0, 0)
+        end
+    end
+
+    --- Split into rows
+    BuffButton0:ClearAllPoints()
+    BuffButton0:SetPoint("BOTTOMRIGHT", Axolotl.ui.MinimapParent, "BOTTOMLEFT", -20, 4)
+    BuffButton8:ClearAllPoints()
+    BuffButton8:SetPoint("BOTTOMLEFT", BuffButton0, "TOPLEFT", 0, 5)
+    BuffButton16:ClearAllPoints()
+    BuffButton16:SetPoint("BOTTOMLEFT", BuffButton8, "TOPLEFT", 0, 5)
+
+    -- ID swapping to reverse order of buffs
+    -- (UI breaks if I re-order the buttons directly)
+    for i = 0, 7, 1 do
+        ---@type Button
+        local button_r1 = getglobal("BuffButton" .. i)
+        button_r1:SetID(7 - i)
+        ---@type Button
+        local button_r2 = getglobal("BuffButton" .. (i + 8))
+        button_r2:SetID(15 - i)
+        ---@type Button
+        local button_debuff = getglobal("BuffButton" .. (i + 16))
+        button_debuff:SetID(7 - i)
+
+        --- DEBUG: Display Buff 0 on all buff buttons
+        -- button_r1:SetID(0)
+        -- button_r2:SetID(0)
+        -- button_debuff:SetID(0)
+        -- button_debuff.buffFilter = "HELPFUL"
+    end
+end
+
+function exports.SetDefaultTooltipAnchor(tooltip, parent)
+    tooltip:SetOwner(parent, "ANCHOR_NONE");
+    tooltip.default = 1;
+
+    local x, y = GetCursorPosition();
+    tooltip:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMLEFT", x + 80, y);
 end

@@ -8,14 +8,7 @@ local _ = {}
 exports.Create = function()
     _.HideVanillaMinimap()
 
-
-    local backdrop = {
-        bgFile = Axolotl.Media("img:ActionBarBackground"),
-        edgeFile = Axolotl.Media("img:ActionBarFrame_edge"),
-        tileEdge = true,
-        edgeSize = 16,
-        insets = { left = 6, right = 6, top = 6, bottom = 6 }
-    }
+    local backdrop = Axolotl.config.style.MinimapBackdrop
 
     local minimapParent = CreateFrame("Frame", nil, UIParent)
     Axolotl.ui.MinimapParent = minimapParent
@@ -24,8 +17,8 @@ exports.Create = function()
     minimapParent:SetWidth(200)
     minimapParent:SetFrameStrata("BACKGROUND")
 
-    local backdropColor = Axolotl.config.color.DefaultBackdrop
-    local borderColor = Axolotl.config.color.DefaultBorder
+    local backdropColor = Axolotl.config.style.DefaultBackdrop
+    local borderColor = Axolotl.config.style.DefaultBorder
     minimapParent:SetBackdrop(backdrop)
     minimapParent:SetBackdropColor(backdropColor:ArgsRGB())
     minimapParent:SetBackdropBorderColor(borderColor:ArgsRGB())
