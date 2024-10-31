@@ -51,6 +51,7 @@ Axolotl.Start = function()
     Axolotl.components.actionbar.Create()
     Axolotl.components.xpbar.Create()
     Axolotl.components.minimap.Create()
+    Axolotl.components.bagbuttons.RepositionContainers()
 end
 
 Axolotl.ToggleAddonsFrame = function()

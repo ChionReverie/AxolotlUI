@@ -5,4 +5,5 @@
     <Script file="actionbar.lua" />
     <Script file="xpbar.lua" />
     <Script file="minimap.lua" />
+    <Script file="bagbuttons.lua" />
 </Ui>
