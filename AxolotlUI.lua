@@ -46,12 +46,13 @@ Axolotl.Media = function(key)
 end
 
 Axolotl.Start = function()
-    Axolotl.components.infobar.Create()
-    Axolotl.components.ribbonmenu.Create()
-    Axolotl.components.actionbar.Create()
-    Axolotl.components.xpbar.Create()
-    Axolotl.components.minimap.Create()
-    Axolotl.components.bagbuttons.RepositionContainers()
+    Axolotl.components.infobar.Place()
+    Axolotl.components.ribbonmenu.Place()
+    Axolotl.components.actionbar.Place()
+    Axolotl.components.xpbar.Place()
+    Axolotl.components.minimap.Place()
+    Axolotl.components.bagbuttons.Place()
+    Axolotl.components.unitframes.Place()
 end
 
 Axolotl.ToggleAddonsFrame = function()

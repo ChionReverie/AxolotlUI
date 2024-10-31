@@ -7,7 +7,7 @@ local _ = {}
 
 exports.BarHeight = 16
 
-exports.Create = function()
+exports.Place = function()
     exports.CreateXPBar()
     exports.CreateRepBar()
 

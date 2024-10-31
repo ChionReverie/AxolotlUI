@@ -6,4 +6,5 @@
     <Script file="xpbar.lua" />
     <Script file="minimap.lua" />
     <Script file="bagbuttons.lua" />
+    <Script file="unitframes.lua" />
 </Ui>

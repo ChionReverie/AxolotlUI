@@ -5,7 +5,7 @@ local exports = Axolotl.components.infobar
 ---@class Axolotl.components.infobar._
 local _ = {}
 
-exports.Create = function()
+exports.Place = function()
     local mainFrame = CreateFrame("Frame", "Axolotl_InfoBar", UIParent)
     Axolotl.ui.InfoBar = mainFrame
 

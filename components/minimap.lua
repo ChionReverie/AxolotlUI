@@ -5,7 +5,7 @@ local exports = Axolotl.components.minimap
 ---@class Axolotl.components.minimap._
 local _ = {}
 
-exports.Create = function()
+exports.Place = function()
     _.HideVanillaMinimap()
 
     local backdrop = Axolotl.config.style.MinimapBackdrop

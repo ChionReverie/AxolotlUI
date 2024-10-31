@@ -87,7 +87,7 @@ exports.ButtonDefinitions = {
 }
 
 ---@return AxolotlButton button
-exports.Create = function()
+exports.Place = function()
     exports.CreateRibbonToggleButton()
     exports.CreateRibbonButtons()
 

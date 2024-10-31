@@ -5,7 +5,7 @@ local exports = Axolotl.components.actionbar
 ---@class Axolotl.components.actionbar._
 local _ = {}
 
-exports.Create = function()
+exports.Place = function()
     local container = CreateFrame("Frame", "Axolotl_ActionBarContainer", UIParent)
     Axolotl.ui.ActionBarContainer = container
 

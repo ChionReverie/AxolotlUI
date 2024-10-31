@@ -5,7 +5,7 @@ local exports = Axolotl.components.bagbuttons
 ---@class Axolotl.components.bagbuttons._
 local _ = {}
 
-function exports.RepositionContainers()
+function exports.Place()
     local parent = CreateFrame("Frame", nil, UIParent)
     Axolotl.ui.BagButtonsParent = parent
     parent:SetPoint("TOP", Axolotl.ui.InfoBar, "BOTTOM")
