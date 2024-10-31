@@ -83,6 +83,21 @@ exports.CreateXPBar = function()
     xpBar:SetStatusBarColor(Axolotl.config.style.XPBarRested:ArgsRGB())
     xpBar:SetBackdropColor(Axolotl.config.style.XPBarEmpty:ArgsRGB())
 
+    local bubbles1 = xpBar:CreateTexture()
+    Axolotl.ui.XPBubbles = bubbles1
+    bubbles1:SetTexture(Axolotl.Media("img:XpBubbles"))
+    bubbles1:SetPoint("TOPLEFT", xpBar, "TOP")
+    bubbles1:SetPoint("BOTTOMRIGHT", xpBar, "BOTTOMRIGHT")
+    bubbles1:SetTexCoord(0, 1, 0, 1)
+    bubbles1:SetVertexColor(Axolotl.config.style.XPBarBorder:ArgsRGB())
+    local bubbles2 = xpBar:CreateTexture()
+    Axolotl.ui.XPBubbles = bubbles2
+    bubbles2:SetTexture(Axolotl.Media("img:XpBubbles"))
+    bubbles2:SetPoint("BOTTOMLEFT", xpBar, "BOTTOMLEFT")
+    bubbles2:SetPoint("TOPRIGHT", xpBar, "TOP")
+    bubbles2:SetTexCoord(0, 1, 0, 1)
+    bubbles2:SetVertexColor(Axolotl.config.style.XPBarBorder:ArgsRGB())
+
     local border = CreateFrame("Frame", nil, xpBar);
     border:SetBackdrop({
         edgeFile = Axolotl.Media("img:ActionBarBackground"),
@@ -163,6 +178,21 @@ function exports.CreateRepBar()
     })
     repBar:SetStatusBarColor(Axolotl.config.style.ReputationColors[0]:ArgsRGB())
     repBar:SetBackdropColor(Axolotl.config.style.RepBarEmpty:ArgsRGB())
+
+    local bubbles1 = repBar:CreateTexture()
+    Axolotl.ui.XPBubbles = bubbles1
+    bubbles1:SetTexture(Axolotl.Media("img:XpBubbles"))
+    bubbles1:SetPoint("TOPLEFT", repBar, "TOP")
+    bubbles1:SetPoint("BOTTOMRIGHT", repBar, "BOTTOMRIGHT")
+    bubbles1:SetTexCoord(0, 1, 0, 1)
+    bubbles1:SetVertexColor(Axolotl.config.style.XPBarBorder:ArgsRGB())
+    local bubbles2 = repBar:CreateTexture()
+    Axolotl.ui.XPBubbles = bubbles2
+    bubbles2:SetTexture(Axolotl.Media("img:XpBubbles"))
+    bubbles2:SetPoint("BOTTOMLEFT", repBar, "BOTTOMLEFT")
+    bubbles2:SetPoint("TOPRIGHT", repBar, "TOP")
+    bubbles2:SetTexCoord(0, 1, 0, 1)
+    bubbles2:SetVertexColor(Axolotl.config.style.XPBarBorder:ArgsRGB())
 
     local border = CreateFrame("Frame", nil, repBar);
     border:SetBackdrop({
