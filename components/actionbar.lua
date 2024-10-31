@@ -63,17 +63,6 @@ exports.Create = function()
     bonusBar:SetScript("OnEvent", _.ActionBarBonus_OnEvent)
     bonusBar:SetAllPoints(bar1)
 
-    local shapeshiftBar = Axolotl.components.actionbar.CreateActionBar({
-        name = "Axolotl_ShapeshiftBar",
-        prefix = "ShapeshiftButton",
-        parent = container,
-        buttonWidth = 40,
-        numButtons = 10,
-    })
-    Axolotl.ui.ShapeshiftBar = shapeshiftBar
-    shapeshiftBar:SetPoint("BOTTOMLEFT", bar2, "TOPLEFT", 0, 50)
-    shapeshiftBar:SetHeight(40)
-
     local petBar = Axolotl.components.actionbar.CreateActionBar({
         name = "Axolotl_PetBar",
         prefix = "PetActionButton",
@@ -82,8 +71,20 @@ exports.Create = function()
         numButtons = 10
     })
     Axolotl.ui.PetActionBar = petBar
-    petBar:SetPoint("BOTTOMLEFT", bar2, "TOPLEFT", 0, 50)
+    petBar:SetPoint("BOTTOMLEFT", bar3, "TOPLEFT", -76, 10)
     petBar:SetHeight(40)
+
+    local shapeshiftBar = Axolotl.components.actionbar.CreateActionBar({
+        name = "Axolotl_ShapeshiftBar",
+        prefix = "ShapeshiftButton",
+        parent = container,
+        buttonWidth = 40,
+        numButtons = 10,
+    })
+    Axolotl.ui.ShapeshiftBar = shapeshiftBar
+    -- Shapeshifts do not need to be positioned as aggressively leftward as pet actions.
+    shapeshiftBar:SetPoint("BOTTOMLEFT", bar3, "TOPLEFT", 3, 10)
+    shapeshiftBar:SetHeight(40)
 
     local background1 = CreateFrame("Frame", nil, container)
     Axolotl.ui.ActionBackground1 = background1;

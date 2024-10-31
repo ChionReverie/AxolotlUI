@@ -11,12 +11,18 @@ exports.EngageReset = function()
     -- Target Frame
     TargetFrame:ClearAllPoints()
     TargetFrame:SetPoint("BOTTOMLEFT", UIParent, "BOTTOM", 80, 200)
+
     -- Fixes issue where target frame sits in front of VanillaStoryline's conversation box.
     PlayerFrame:SetFrameStrata("BACKGROUND")
     TargetFrame:SetFrameStrata("BACKGROUND")
     if StorylineFrame then
         StorylineFrame:SetFrameStrata("HIGH")
     end
+
+    PetFrame:ClearAllPoints()
+    PetFrame:SetPoint("BOTTOMRIGHT", PlayerFrame, "TOPRIGHT", -20, -30)
+    PetFrameDebuff1:ClearAllPoints()
+    PetFrameDebuff1:SetPoint("BOTTOMLEFT", PetFrame, "TOP", -20, -8)
 
     -- Group loot frames
     GroupLootFrame1:ClearAllPoints();
