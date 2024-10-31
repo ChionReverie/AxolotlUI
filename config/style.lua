@@ -25,6 +25,19 @@ exports.RestedIndicator_Exhausted = HexColor("#CB83E5")
 exports.XPBarBorder = HexColor("#444444")
 exports.XPBarEmpty = HexColor("#171717")
 exports.XPBarRested = HexColor("#7777ff")
+exports.RepBarEmpty = exports.XPBarEmpty
+-- Taken from FACTION_BAR_COLORS
+exports.ReputationColors = {}
+exports.ReputationColors[0] = HexColor("#555555") -- Unknown
+exports.ReputationColors[1] = HexColor("#CC4C38") -- Hated
+exports.ReputationColors[2] = HexColor("#CC4C38") -- Hostile
+exports.ReputationColors[3] = HexColor("#8F4400") -- Unfriendly
+exports.ReputationColors[4] = HexColor("#E5B200") -- Neutral
+exports.ReputationColors[5] = HexColor("#009919") -- Friendly
+exports.ReputationColors[6] = HexColor("#009919") -- Honored
+exports.ReputationColors[7] = HexColor("#009919") -- Revered
+exports.ReputationColors[8] = HexColor("#009919") -- Exalted
+
 
 exports.ActionBarBackdrop = {
     bgFile = Axolotl.Media("img:ActionBarBackground"),
