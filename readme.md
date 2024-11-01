@@ -1,4 +1,4 @@
-# AxolotlUI - v0.2.0-sample
+# AxolotlUI - v0.2.1-sample
 ![WoW Client](https://img.shields.io/badge/wow_client-1.12.1_%22vanilla%22-blue)
 [![Release](https://img.shields.io/github/v/release/ChionReverie/AxolotlUI)](https://github.com/ChionReverie/AxolotlUI/tags) 
 [![Prerelease](https://img.shields.io/github/v/release/ChionReverie/AxolotlUI?include_prereleases&label=prerelease)](https://github.com/ChionReverie/AxolotlUI/tags)
