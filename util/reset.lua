@@ -53,6 +53,10 @@ exports.EngageReset = function()
         _.defaultTooltipAnchorFn = GameTooltip_SetDefaultAnchor
         GameTooltip_SetDefaultAnchor = exports.SetDefaultTooltipAnchor
     end
+
+    -- Tutorial Frames
+    TutorialFrameParent:ClearAllPoints();
+    TutorialFrameParent:SetPoint("BOTTOMLEFT", Axolotl.ui.ActionBackground2, "BOTTOMRIGHT", 10, 10)
 end
 
 function exports.SetDefaultTooltipAnchor(tooltip, parent)
