@@ -53,6 +53,7 @@ Axolotl.Start = function()
     Axolotl.components.minimap.Place()
     Axolotl.components.bagbuttons.Place()
     Axolotl.components.unitframes.Place()
+    Axolotl.components.buffs.Place()
 end
 
 Axolotl.ToggleAddonsFrame = function()
