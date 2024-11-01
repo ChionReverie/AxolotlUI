@@ -54,6 +54,7 @@ Axolotl.Start = function()
     Axolotl.components.bagbuttons.Place()
     Axolotl.components.unitframes.Place()
     Axolotl.components.buffs.Place()
+    Axolotl.components.castbar.Place()
 end
 
 Axolotl.ToggleAddonsFrame = function()

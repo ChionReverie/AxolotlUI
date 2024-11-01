@@ -8,4 +8,5 @@
     <Script file="bagbuttons.lua" />
     <Script file="unitframes.lua" />
     <Script file="buffs.lua" />
+    <Script file="castbar.lua" />
 </Ui>
