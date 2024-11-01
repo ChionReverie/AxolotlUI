@@ -57,6 +57,8 @@ exports.EngageReset = function()
     -- Tutorial Frames
     TutorialFrameParent:ClearAllPoints();
     TutorialFrameParent:SetPoint("BOTTOMLEFT", Axolotl.ui.ActionBackground2, "BOTTOMRIGHT", 10, 10)
+
+    BuffFrame:Hide()
 end
 
 function exports.SetDefaultTooltipAnchor(tooltip, parent)
