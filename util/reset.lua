@@ -66,7 +66,7 @@ function exports.SetDefaultTooltipAnchor(tooltip, parent)
     tooltip:SetOwner(parent, "ANCHOR_NONE");
     tooltip.default = 1;
 
-    tooltip:SetPoint("TOPLEFT", UIParent, "TOPLEFT", 0, -90);
+    tooltip:SetPoint("TOPRIGHT", Axolotl.ui.InfoBar, "BOTTOMRIGHT", -90, -10);
 end
 
 function exports.Debug_ShowGroupLoot()
