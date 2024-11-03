@@ -65,6 +65,5 @@ function exports.SetDefaultTooltipAnchor(tooltip, parent)
     tooltip:SetOwner(parent, "ANCHOR_NONE");
     tooltip.default = 1;
 
-    local x, y = GetCursorPosition();
-    tooltip:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMLEFT", x + 80, y);
+    tooltip:SetPoint("TOPLEFT", UIParent, "TOPLEFT", 0, -90);
 end
