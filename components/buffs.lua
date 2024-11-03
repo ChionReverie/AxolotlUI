@@ -6,6 +6,12 @@ local exports = Axolotl.components.buffs
 local _ = {}
 
 function exports.Place()
+    exports.PlaceBuffs()
+
+    exports.PlaceTempEnchants()
+end
+
+function exports.PlaceBuffs()
     if not Axolotl.ui.BuffIcons then
         Axolotl.ui.BuffIcons = {}
     end
@@ -66,4 +72,19 @@ function exports.Place()
 
         previous = button
     end
+end
+
+function exports.PlaceTempEnchants()
+    TempEnchant1:ClearAllPoints();
+    TempEnchant1:SetPoint("BOTTOMLEFT", Axolotl.ui.ActionBackground2, "BOTTOMLEFT", -32, 15)
+    TempEnchant1Duration:ClearAllPoints();
+    TempEnchant1Duration:SetPoint("BOTTOM", TempEnchant1, "TOP", 0, 5)
+
+    TempEnchant2:ClearAllPoints();
+    TempEnchant2:SetPoint("BOTTOMLEFT", Axolotl.ui.ActionBackground2, "BOTTOMLEFT", -72, 15)
+    TempEnchant2Duration:ClearAllPoints();
+    TempEnchant2Duration:SetPoint("BOTTOM", TempEnchant2, "TOP", 0, 5)
+
+    TempEnchant2:SetID(16)
+    TempEnchant2:Show()
 end
