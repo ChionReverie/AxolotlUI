@@ -33,6 +33,7 @@ exports.EngageReset = function()
     GroupLootFrame3:SetPoint("Top", GroupLootFrame2, "BOTTOM", 0, 0)
     GroupLootFrame4:ClearAllPoints();
     GroupLootFrame4:SetPoint("Top", GroupLootFrame3, "BOTTOM", 0, 0)
+    UIPARENT_MANAGED_FRAME_POSITIONS["GroupLootFrame1"] = nil
 
     -- Force-hide Multi ActionBars
     MainMenuBar:Hide()
@@ -66,4 +67,11 @@ function exports.SetDefaultTooltipAnchor(tooltip, parent)
     tooltip.default = 1;
 
     tooltip:SetPoint("TOPLEFT", UIParent, "TOPLEFT", 0, -90);
+end
+
+function exports.Debug_ShowGroupLoot()
+    GroupLootFrame1:Show()
+    GroupLootFrame2:Show()
+    GroupLootFrame3:Show()
+    GroupLootFrame4:Show()
 end
