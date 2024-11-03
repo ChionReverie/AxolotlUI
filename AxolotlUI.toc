@@ -1,6 +1,8 @@
-## Interface 11000
+## Interface 11200
 ## Title: Axolotl UI
-## Notes: User interface mod
+## Version: 0.2.2
+## Author: Chion Reverie
+## Notes: Axolotl User Interface addon
 ## Dependencies: 
 ## SavedVariablesPerCharacter: 
 AxolotlUI.lua
